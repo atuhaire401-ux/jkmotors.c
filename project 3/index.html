@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Welcome to J.K. Motors. Discover quality cars from Toyota,
+ Nissan, BMW, Mercedes-Benz, Honda, Subaru and other popular brands.">
+
+<meta name="keywords" content="J.K. Motors, cars for sale, Toyota, BMW, Nissan, Mercedes-Benz, Uganda">
+
+<meta name="author" content="J.K. Motors">
+
+<meta name="theme-color" content="#222222">
+
+<title>J.K. MOTORS | Quality Cars</title>
+
+<style>
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+
+
+.header {
+    background: #222;
+    color: white;
+    padding: 12px 5%;
+    border-bottom: 3px solid #ffb400;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #ffb400;
+    background: white;
+}
+
+.logo h1 {
+    font-family: Algerian, Georgia, serif;
+    font-size: clamp(22px, 3vw, 34px);
+    color: #ffb400;
+    line-height: 1.2;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    background: tomato;
+    color: #222;
+}
+
+.main {
+    min-height: 650px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("jk.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding: 60px 5%;
+    color: white;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.content h2 {
+    color: white;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.content span {
+    display: inline-block;
+    color: #ffb400;
+    font-size: clamp(35px, 5vw, 65px);
+    font-weight: bold;
+    font-family: Georgia, serif;
+    line-height: 1.3;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffb400;
+    color: #171717;
+    padding: 13px 20px;
+    border: 2px solid #ffb400;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    border-color: white;
+    color: #b22222;
+    transform: translateY(-2px);
+}
+
+.explore-button {
+    margin-top: 10px;
+}
+
+
+.form {
+    width: 350px;
+    max-width: 100%;
+    flex-shrink: 0;
+
+    background: rgba(7, 26, 46, 0.95);
+    border: 1px solid #ffb400;
+    border-radius: 15px;
+
+    padding: 28px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.form h2 {
+    color: #ffb400;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.form input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+
+    background: #172c40;
+    border: 1px solid #ffb400;
+    border-radius: 5px;
+
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.form input:focus {
+    border-color: white;
+}
+
+.form input::placeholder {
+    color: #eeeeee;
+}
+
+.form .btn {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.form p {
+    margin: 10px 0;
+    color: white;
+}
+
+.form a {
+    color: white;
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.contact-button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+}
+
+
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 3px solid #ffb400;
+}
+
+footer h2 {
+    color: #ffb400;
+    margin-bottom: 10px;
+    font-family: Georgia, serif;
+}
+
+footer p {
+    margin-bottom: 12px;
+}
+
+
+@media (max-width: 900px) {
+
+    .header-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .main-container {
+        gap: 30px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .header {
+        padding: 15px 10px;
+    }
+
+    .header-container {
+        gap: 15px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .main {
+        min-height: auto;
+        padding: 40px 18px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 35px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .content h2 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .content span {
+        font-size: 39px;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        padding: 22px;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .logo h1 {
+        font-size: 21px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .content h2 {
+        font-size: 26px;
+    }
+
+    .content span {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="header-container">
+
+        <div class="logo">
+
+            <a href="index.html">
+                <img src="logo.png" alt="J.K. Motors Logo">
+            </a>
+
+            <h1>J.K. MOTORS</h1>
+
+        </div>
+
+
+        <nav aria-label="Main navigation">
+
+            <a href="index.html">HOME</a>
+
+            <a href="about.html">ABOUT</a>
+
+            <a href="contact.html">CONTACT US</a>
+
+            <a href="gallery.html">GALLERY</a>
+
+            <a href="services.html">SERVICES</a>
+
+            <a href="price.html">PRICES</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="main">
+
+    <div class="main-container">
+
+        <!-- WELCOME MESSAGE -->
+
+        <section class="content">
+
+            <h2>WELCOME TO J.K. MOTORS</h2>
+
+            <p>
+                We welcome you to<br>
+
+                <span>J.K. MOTORS</span><br>
+
+                Drive Your Dream. Enjoy Every Journey!
+            </p>
+
+            <p>
+                Discover quality vehicles from Toyota, Nissan,
+                BMW, Mercedes-Benz, Honda, Subaru, and other
+                popular brands.
+
+                Find a car that matches your lifestyle,
+                needs, and budget.
+            </p>
+
+            <a href="gallery.html" class="btn explore-button">
+                EXPLORE OUR CARS
+            </a>
+
+        </section>
+
+        <section class="form">
+
+            <h2>LOGIN HERE</h2>
+
+            <form action="#" method="post">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    aria-label="Email address"
+                    autocomplete="email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    aria-label="Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button class="btn" type="submit">
+                    LOGIN
+                </button>
+
+            </form>
+
+            <p>Need help accessing your account?</p>
+
+            <a href="contact.html" class="btn contact-button">
+                CONTACT US FOR ASSISTANCE
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <h2>J.K. MOTORS</h2>
+
+    <p>Your Dream Car, Our Commitment.</p>
+
+    <p>
+        &copy; 2026 J.K. MOTORS.
+        All rights reserved.
+    </p>
+
+    <a href="about.html" class="btn">
+        ABOUT US
+    </a>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gallery | Rwenkobwa Secondary School</title>
+<style>
+ *{
+box-sizing:border-box
+margin:0;
+padding:0;
+}
+body{
+font-family: Arial, sans-serif;
+background:violet;
+}
+.header {
+    background: black;
+    color: white;
+    padding: 12px 4%;
+}
+
+
+
+.logo {
+display: flex;
+gap: 12px;
+}
+
+.logo img {
+width: 55px;
+height: 55px;
+object-fit: contain;
+border-radius: 50%;
+border: 1px  solid red;
+}
+.logo h1 {
+    font-family: Algerian, Arial, sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+   flex-wrap:wrap;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+
+
+nav a {
+    color: white;
+    padding: 9px 12px;
+    font-size: 13px;
+    text-decoration:none;
+}
+.card{
+background:black;
+border-radius:10px;
+border:red;
+}
+
+nav a:hover,nav a active{
+background:red;
+color: white;
+}
+ section{
+padding:50px 5%;
+}
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+color:white;
+margin-bottom:30px;
+}
+
+ .gallery{display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+.gallery img:hover{transform:scale(1.03)}
+
+.popup{
+display:none;
+position:fixed;
+inset:0;
+background:#000e;
+z-index:1000;
+align-items:center;
+justify-content:center;
+}
+
+.popup img{
+max-width:92%;
+max-height:90%;
+}
+.close{
+position:absolute;
+right:30px;
+top:5px;
+color:white;
+font-size:50px;
+cursor:pointer;
+}
+
+footer{
+background:green;
+color:white;
+text-align:center;
+padding:35px
+}
+@media(max-width:500px){
+nav a{
+font-size:11px;
+padding:8px 5px;
+}
+.gallery img{height:160px}}
+
+
+.footer-photo {
+width: 90px;
+height: 90px;
+object-fit: cover;
+border-radius: 50%;
+border: 3px solid white;
+display: block;
+margin: 0 auto 10px;
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-container">
+<div class="logo">
+<a href="index.html">
+<img src="logo.png" alt="J.K. MOTORS Logo"></a>
+<h1>J.K. MOTORS</h1>
+</div>
+
+<nav>
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT US</a>
+  <a href="contact.html">CONTACT US</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="services.html">SERVICES</a>
+  <a href="prices.html">PRICES</a>
+</nav>
+</div>
+</header>
+
+<section>
+<div class="container">
+<h2>BRAND NEW MODELS</h2>
+
+<div class="gallery">
+<img src="brian.png" onclick="openImage(this.src)">
+<img src="Gold car.jpg" onclick="openImage(this.src)">
+<img src="hoover.jpg" onclick="openImage(this.src)">
+<img src="Toyota HRV.jpg" onclick="openImage(this.src)">
+<img src="delivery.jpg" onclick="openImage(this.src)">
+<img src="MG HS PNG.jpg" onclick="openImage(this.src)">
+<img src="image.png" onclick="openImage(this.src)">
+<img src="image-2.png" onclick="openImage(this.src)">
+<img src="image-1.jpg" onclick="openImage(this.src)">
+<img src="image-7.jpg" onclick="openImage(this.src)">
+<img src="Land Rover.jpg" onclick="openImage(this.src)">
+<img src="image-5.jpg" onclick="openImage(this.src)">
+</div>
+</div>
+</section>
+
+<div class="popup" id="popup" onclick="closeImage()">
+<span class="close">&times;</span>
+<img id="largeImage">
+</div>
+
+<script>
+function openImage(src){
+document.getElementById("popup").style.display="flex";
+document.getElementById("largeImage").src=src;
+}
+function closeImage(){
+document.getElementById("popup").style.display="none";
+}
+</script>

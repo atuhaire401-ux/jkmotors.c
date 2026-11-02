@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | J.K Motors</title>
+<style>
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+font-family: Arial, sans-serif;
+background:radial-gradient(circle at 20% 30%,
+#b60dad 0%, transparent 40%),
+radial-gradient(circle at 80% 70%,
+#a11337 0%, transparent 45%),
+linear-gradient(135deg, #5f4a03, #088b64);
+animation: glow 15s ease-in-out infinite alternate;;
+line-height: 1.7;
+}
+
+
+.header {
+    background: #222;
+    color: white;
+    padding: 12px 4%;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.logo img {
+width: 55px;
+height: 55px;
+object-fit: contain;
+border-radius: 50%;
+border: 2px solid white;
+}
+.logo h1 {
+    font-family: Algerian, Arial, sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+   flex-wrap:wrap;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover,nav a.active {
+background: tomato;
+color: white;
+}
+
+
+
+
+
+
+.hero{
+  min-height: 390px;
+  background: linear-gradient(
+  rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("jk.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color:white;
+  font-size:15px;
+}
+.hero h1{
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: white;
+  padding: 25px;
+}
+.hero h1 span{
+  color: red;
+  font-size: 25px;
+  font-family: "Comic Sans MS", cursive;
+  display: block;
+  margin-top: 10px;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+.card{
+  width: 100%;
+  min-height: 300px;
+  background: black;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255,0,0,0.4);
+  transition: transform 0.3s;
+}
+.card:hover{
+  transform: translateY(-7px);
+}
+.card img{
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card h3{
+  color: darkgreen;
+  font-size: 21px;
+  margin: 10px 0;
+}
+.card p{
+  line-height: 1.6;
+}
+.btn-view{
+  color: white;
+  font-family: Georgia, serif;
+  background-color: lawngreen;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-view:hover{
+  background-color: green;
+}
+
+.contact-box {
+    text-align: center;
+    padding: 35px 20px;
+    background: transparent;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.contact-box p {
+    margin: 12px 0 20px;
+}
+.button {
+    display: inline-block;
+    background: #ffb400;
+    color: #071a2e;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: white;
+}
+
+footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer h2 {
+            color: orange;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+@media (max-width: 900px){
+  .container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 550px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+}
+@media (max-width: 900px) {
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header-container {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-container">
+<div class="logo">
+<a href="index.html">
+<img src="logo.png" alt="J.K. MOTORS Logo"></a>
+<h1><marquee>J.K. MOTORS</marquee></h1>
+</div>
+
+<nav>
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT US</a>
+  <a href="contact.html">CONTACT US</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="services.html">SERVICES</a>
+  <a href="prices.html">PRICES</a>
+</nav>
+</div>
+</header>
+
+<div class="hero">
+  <h1>J.K. MOTORS<br><span>The best importing and distributing motor company in Uganda</span></h1>
+At J.K MOTORS, we are passionate about connecting our customers with quality, reliable, and affordable vehicles.<br> We are committed to delivering excellent customer service, transparent deals, and a smooth car-buying experience.<br> Whether you are looking for your first car, a family vehicle, or a business vehicle, we are here to help you find the perfect match.
+</div>
+
+<section class="container">
+  
+  <div class="card">
+    <img src="brian.png" alt="Hummer">
+    <h3>HUMMER</h3>
+    <a href="gallery.html"><button>View</button></a>
+   
+  </div>
+
+  <div class="card">
+    <img src="Toyota HRV.jpg" alt="Toyota">
+    <h3>TOYOTA</h3>
+    <a href="gallery.html"><button>View</button></a>
+  </div>
+
+  <div class="card">
+    <img src="MG HS PNG.jpg" alt="Toyota">
+    <h3>MG HS </h3>
+    <a href="gallery.html"><button>View</button></a>
+    
+  </div>
+
+  <div class="card">
+    <img src="Gold car.jpg" alt="">
+    <h3>GOLD CAR</h3>
+    <a href="gallery.html"><button>View</button></a>
+  </div>
+
+</section>
+ </section>
+
+    <section class="contact-box">
+        <h2 class="section-title">YOUR NEXT JOURNEY STARTS HERE</h2>
+
+        <p>
+            Have a question or want to learn more about a vehicle?
+            We would be happy to hear from you.
+        </p>
+
+        <a href="gallery.html" class="button">VIEW OUR GALLERY</a>
+        <a href="contact.html" class="button">CONTACT US</a>
+    </section>
+<footer>
+<p>@media &copy 2026<br>JK COMPANY<br>Kampala Uganda</p>
+
+</footer>
+
+</body>
+</html>

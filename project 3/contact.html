@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | J.K MOTORS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+body{
+font-family: Arial, sans-serif;
+background:radial-gradient(circle at 20% 30%,
+#b60dad 0%, transparent 40%),
+radial-gradient(circle at 80% 70%,
+#a11337 0%, transparent 45%),
+linear-gradient(135deg, #5f4a03, #088b64);
+animation: glow 15s ease-in-out infinite alternate;;
+line-height: 1.7;
+}
+
+        
+        .header {
+            background: #222;
+            padding: 12px 4%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .logo h1 {
+            font-family: Algerian, Arial, sans-serif;
+            font-size: clamp(22px, 3vw, 34px);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 12px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: tomato;
+        }
+
+        
+        .hero {
+            text-align: center;
+            padding: 65px 20px;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+                url("jk.jpg") center/cover no-repeat;
+        }
+
+        .hero h2 {
+            color: #ffb400;
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            font-size: 17px;
+           color:white;
+        }
+
+        .button {
+            display: inline-block;
+            background: #ffb400;
+            color: #222;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        
+        .content {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .card {
+            min-width: 0;
+            background: white;
+            color: #222;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #088b64;
+            margin-bottom: 18px;
+            font-size: 25px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .card strong {
+            color: #a11337;
+        }
+
+        .hours {
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 2px solid #ddd;
+        }
+
+        .hours h3 {
+            color: #088b64;
+            margin-bottom: 10px;
+        }
+
+     
+        form {
+            width: 100%;
+        }
+
+        form label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #fff;
+            color: #222;
+            font: inherit;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #088b64;
+            border-color: #088b64;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #088b64;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #066849;
+        }
+
+        .form-note {
+            color: #555;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+      
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 45px;
+        }
+
+        .footer h2 {
+            color: #ffb400;
+            margin-bottom: 8px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin: 12px 0;
+        }
+
+        .footer-links a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 9px;
+        }
+
+        .footer-links a:hover {
+            color: #ffb400;
+        }
+
+        /* TABLETS AND MOBILE PHONES */
+        @media (max-width: 850px) {
+            .header-container {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .header {
+                padding: 15px 3%;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 45px 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .content {
+                width: 92%;
+                margin: 25px auto;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <header class="header">
+        <div class="header-container">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="J.K MOTORS Logo">
+                </a>
+                <h1>J.K MOTORS</h1>
+            </div>
+
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="contact.html" class="active">CONTACT US</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="services.html">SERVICES</a>
+                <a href="prices.html">PRICES</a>
+            </nav>
+
+        </div>
+    </header>
+
+  
+    <section class="hero">
+        <h2>CONTACT US</h2>
+
+        <p>
+            Looking for your dream car or professional vehicle services?
+            Contact J.K MOTORS today. We are ready to help you.
+        </p>
+
+        <a href="#contactForm" class="button">CONTACT US</a>
+    </section>
+
+  
+    <main class="content">
+
+      
+        <section class="card">
+            <h2>Get in Touch</h2>
+
+            <p><strong>Company:</strong> J.K MOTORS</p>
+            <p><strong>Location:</strong> Kampala, Uganda</p>
+            <p><strong>Phone:</strong> 0768 773 627</p>
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:jk.motors1234@gmail.com">
+                    jk.motors1234@gmail.com
+                </a>
+            </p>
+
+            <div class="hours">
+                <h3>Opening Hours</h3>
+
+                <p><strong>Monday–Friday:</strong> 8:00 AM–10:00 PM</p>
+                <p><strong>Saturday:</strong> 9:00 AM–6:00 PM</p>
+                <p><strong>Sunday:</strong> Contact us for hours</p>
+            </div>
+
+            <p style="margin-top: 20px;">
+                We welcome your questions about car purchases,
+                repairs, servicing and price quotations.
+            </p>
+        </section>
+
+       
+        <section class="card" id="contactForm">
+            <h2>Send an Inquiry</h2>
+
+            <form action="https://formspree.io/f/xbggrnlj"
+                  method="POST">
+
+                <label for="name">Full Name</label>
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="phone">Phone Number</label>
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    autocomplete="tel"
+                >
+
+                <label for="subject">Reason for Contact</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Choose an option</option>
+                    <option value="Car Purchase">Car Purchase</option>
+                    <option value="Car Repairs">Car Repairs</option>
+                    <option value="Vehicle Servicing">Vehicle Servicing</option>
+                    <option value="Price Quotation">Price Quotation</option>
+                    <option value="Other Inquiry">Other Inquiry</option>
+                </select>
+
+                <label for="message">Your Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="submit-button">
+                    SEND MESSAGE
+                </button>
+
+                <p class="form-note">
+                    Please check your details before sending your inquiry.
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <h2>J.K MOTORS</h2>
+
+        <p>Your trusted partner for cars and vehicle services.</p>
+        <p>Kampala, Uganda | Phone: 0768 773 627</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="prices.html">Prices</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <p>
+            &copy; 2026 J.K MOTORS. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

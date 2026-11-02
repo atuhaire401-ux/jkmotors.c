@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | J.K MOTORS</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 20% 30%,
+        #b60dad 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%,
+        #a11337 0%, transparent 45%),
+        linear-gradient(135deg, #5f4a03, #088b64);
+}
+
+
+.header {
+    background: #222;
+    color: white;
+    padding: 12px 4%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.logo h1 {
+    font-family: Algerian, Arial, sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: tomato;
+}
+
+
+.hero {
+    text-align: center;
+    padding: clamp(40px, 7vw, 75px) 5%;
+    color: white;
+    background:
+        linear-gradient(rgba(0,0,0,0.65),
+                        rgba(0,0,0,0.65)),
+        url("jk.jpg") center/cover no-repeat;
+}
+
+.hero h2 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 12px;
+    color: #ffb400;
+    line-height: 1.2;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    font-size: clamp(14px, 2vw, 17px);
+}
+
+
+.services-section {
+    width: 100%;
+    padding: clamp(30px, 5vw, 55px) 5%;
+}
+
+.section-title {
+    text-align: center;
+    color: #fff200;
+    font-size: clamp(25px, 4vw, 36px);
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.service-card {
+    min-width: 0;
+    background: rgba(255,255,255,0.96);
+    color: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+.service-card img {
+    display: block;
+    width: 100%;
+    height: clamp(170px, 19vw, 240px);
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: #a11337;
+    font-size: clamp(18px, 2vw, 22px);
+    padding: 14px 12px 5px;
+}
+
+.service-card p {
+    padding: 0 18px 22px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+
+.contact-box {
+    text-align: center;
+    padding: 40px 5%;
+    background: rgba(0,0,0,0.45);
+    color: white;
+}
+
+.contact-box h2 {
+    color: #ffb400;
+    font-size: clamp(23px, 4vw, 32px);
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.button {
+    display: inline-block;
+    background: #ffb400;
+    color: #222;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+    overflow-wrap: anywhere;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+
+@media (max-width: 1000px) {
+    .header-container {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .service-card img {
+        height: 220px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 3%;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .services-section {
+        padding: 30px 5%;
+    }
+
+    .service-card img {
+        height: auto;
+        aspect-ratio: 16 / 10;
+    }
+
+    .service-card h3 {
+        font-size: 21px;
+    }
+
+    .service-card p {
+        padding: 0 18px 22px;
+    }
+
+    .contact-box {
+        padding: 32px 5%;
+    }
+
+    .button {
+        max-width: 100%;
+        padding: 11px 16px;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .logo {
+        gap: 7px;
+    }
+
+    .logo h1 {
+        font-size: 21px;
+    }
+
+    nav a {
+        padding: 7px;
+        font-size: 11px;
+    }
+
+    .section-description {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="J.K MOTORS Logo">
+            </a>
+            <h1>J.K MOTORS</h1>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="services.html" class="active"
+               aria-current="page">SERVICES</a>
+            <a href="prices.html">PRICES</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h2>OUR SERVICES</h2>
+
+    <p>
+        At J.K MOTORS, we offer automotive services designed
+        to meet your vehicle needs. From mechanical repairs
+        and vehicle assembly to spare parts, painting and
+        delivery, we are committed to serving our customers.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<main>
+<section class="services-section">
+
+    <h2 class="section-title">WHAT WE DO</h2>
+
+    <p class="section-description">
+        Explore our automotive services below.
+    </p>
+
+    <div class="services-container">
+
+        <article class="service-card">
+            <img src="car repair.jpg"
+                 alt="Mechanics repairing a vehicle"
+                 loading="lazy">
+            <h3>Mechanics &amp; Repairs</h3>
+            <p>
+                Vehicle inspection, fault diagnosis,
+                maintenance and mechanical repairs to help
+                keep your vehicle in good condition.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <img src="car assembling.jpg"
+                 alt="Vehicle assembly service"
+                 loading="lazy">
+            <h3>Vehicle Assembly</h3>
+            <p>
+                Vehicle assembly and fitting services
+                performed with attention to quality,
+                safety and proper installation.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <img src="car delivery.jpg"
+                 alt="Vehicle delivery service"
+                 loading="lazy">
+            <h3>Vehicle Delivery</h3>
+            <p>
+                Convenient vehicle delivery arrangements
+                to help customers receive their vehicles
+                at an agreed destination.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <img src="spare parts (2).jpg"
+                 alt="Automotive spare parts"
+                 loading="lazy">
+            <h3>Spare Parts</h3>
+            <p>
+                Automotive spare parts for vehicle
+                maintenance and repairs, helping customers
+                find parts suitable for their vehicles.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <img src="car painting.jpg"
+                 alt="Professional car painting"
+                 loading="lazy">
+            <h3>Car Painting</h3>
+            <p>
+                Vehicle painting and refinishing services
+                to refresh your car's appearance and
+                restore its attractive finish.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <img src="car repair.jpg"
+                 alt="Vehicle inspection and maintenance"
+                 loading="lazy">
+            <h3>Vehicle Inspection</h3>
+            <p>
+                General vehicle checks to help identify
+                maintenance needs and potential problems
+                before they become more serious.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-box">
+    <h2>NEED OUR SERVICES?</h2>
+
+    <p>
+        Contact J.K MOTORS to discuss your vehicle
+        requirements and find out how we can help.
+    </p>
+
+    <a href="contact.html" class="button">CONTACT US</a>
+    <a href="gallery.html" class="button">VIEW OUR GALLERY</a>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p><strong>J.K MOTORS</strong></p>
+    <p>&copy; 2026 J.K MOTORS. All rights reserved.</p>
+    <p>Kampala, Uganda</p>
+    <p>Driven by Trust. Powered by Excellence.</p>
+</footer>
+
+</body>
+</html>
